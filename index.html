@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Array Methods</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Array Methods</h1>
+    <div class="border">
+        <div class="text">
+            <p>This is my array:</p>
+            <p id=display></p>
+        </div>
+    </div>
+    <div class="buttons">
+        <button onclick="unshiftVal()">Unshift</button>
+        <button onclick="shiftVal()">Shift</button>
+        <input type="text" id="newItem" name=newItem>
+        <button onclick="pushVal()">Push</button>
+        <button onclick="popVal()">Pop</button>
+        <button onclick="clr()">Clear</button>
+    </div>
+    <script>
+        let myArray = ["Rainbow", " Unicorn", " Candy", " Glitter", " Sparkle"]
+
+        function listOfArrays() {
+            document.getElementById("display").innerHTML = myArray;
+        }
+
+        function popVal() {
+            myArray.pop();
+            document.getElementById("display").innerHTML = myArray;
+        }
+
+        function pushVal() {
+            // myArray.push();
+            document.getElementById("display").innerHTML = myArray;
+            let n = document.getElementById("newItem").value;
+            myArray.push(n);
+            document.getElementById("display").innerHTML = myArray;
+        }
+        function unshiftVal() {
+            // myArray.unshift();
+            document.getElementById("display").innerHTML = myArray;
+            let n = document.getElementById("newItem").value;
+            myArray.unshift(n);
+            document.getElementById("display").innerHTML = myArray;
+        }
+        function shiftVal() {
+            myArray.shift();
+            document.getElementById("display").innerHTML = myArray;
+        }
+        function clr() {
+            myArray = [];
+            document.getElementById("display").innerHTML = myArray;
+        }
+        listOfArrays(myArray);
+    </script>
+</body>
+
+</html>
